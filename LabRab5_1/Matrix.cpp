@@ -1,6 +1,8 @@
 #include "Matrix.h"
 #include <iostream>
 
+//Конструкторы
+
 Matrix::Matrix()
 {
 	row = 0;
@@ -34,6 +36,10 @@ Matrix::~Matrix()
 	}
 }
 
+
+
+//А здесь определения для наших методов
+
 void Matrix::input()
 {
 	std::cout << "Input size of matrix: ";
@@ -60,6 +66,31 @@ void Matrix::print()
 	std::cout << std::endl;
 }
 
+int Matrix::matradd(double* elem1, double* elem2, int col1, int row2)
+{
+	if (col1 != row2) {
+		std::cout << "The size of matrix must be the same.";
+	}
+	elem = new double[col1 * row2];
+	col = col1; 
+	row = row2;
+	for (int i = 0; i < row2 * col1; i++)
+	{
+		elem[i] = elem1[i] + elem2[i];
+	}
+	return 1;
+}
+
+double Matrix::trace(double* elem, int size)
+{
+	double sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum = sum + elem[i * size + i];
+	}
+	return sum;
+}
+
 int Matrix::get_columns()
 {
 	return col;
@@ -73,16 +104,6 @@ int Matrix::get_rows()
 int Matrix::get_size()
 {
 	return row * col;
-}
-
-double Matrix::trace(double* elem, int size)
-{
-	double sum = 0;
-	for (int i = 0; i < size; i++)
-	{
-		sum = sum + elem[i * size + i];
-	}
-	return sum;
 }
 
 
