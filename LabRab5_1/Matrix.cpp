@@ -55,6 +55,21 @@ void Matrix::input()
 	std::cout << std::endl;
 }
 
+void Matrix::input(int i, int j)
+{
+	row = j;
+	col = i;
+	elem = new double[(col) * (row)];
+	std::cout << "Input elements:" << std::endl;
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			std::cout << "Input " << "[" << i << "][" << j << "]: ";
+			std::cin >> elem[i * col + j];
+		}
+	}
+	std::cout << std::endl;
+}
+
 void Matrix::print()
 {
 	for (int i = 0; i < row; i++) {
@@ -104,6 +119,14 @@ int Matrix::get_rows()
 int Matrix::get_size()
 {
 	return row * col;
+}
+
+double Matrix::get_elem(int i, int j)
+{
+	if (i >= 0 && j >= 0 && i < row && j < col)
+	{
+		return elem[i * col + j];
+	}
 }
 
 

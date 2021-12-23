@@ -13,4 +13,9 @@ int main()
 	Matrix matr3;
 	matr3.matradd(matr.elem, matr2.elem, matr.get_columns(), matr2.get_rows());
 	matr3.print();
+
+	Matrix matr4;
+	matr4.input(3, 3);
+	matr4.print();
+	std::cout << matr4.get_elem(1, 2);
 }

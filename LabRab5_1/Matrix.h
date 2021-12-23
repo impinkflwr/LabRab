@@ -20,11 +20,13 @@ public:
 
 	//Наши методы
 	void input();
+	void input(int i, int j);
 	void print();
 	int matradd(double* elem, double* elem2, int _col, int _row);
 	int get_columns();
 	int get_rows();
 	int get_size();
+	double get_elem(int i, int j);
 	double trace(double* elem, int size);
 };
 
