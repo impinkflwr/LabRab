@@ -73,19 +73,19 @@ void find_substring2(const char* str_for_search_in, const char* substring)
 void encrypt(char* str_for_encrypt, int key)
 {
 	for (int i = 0; i < strlen(str_for_encrypt); i++) {
-		if ('a' <= str_for_encrypt[i] && str_for_encrypt[i] <= 'z') { // Работа с нижним регистром
-			if (str_for_encrypt[i] + key > 'z') // Если при выплнении шифра Цезаря происходит выход за конец алфавита
-				str_for_encrypt[i] = 'z' - str_for_encrypt[i] + 'a' + key - 1; // То переносим в начало и применяем ключ
-			else str_for_encrypt[i] += key; // Иначе, просто применяем ключ
+		if ('a' <= str_for_encrypt[i] && str_for_encrypt[i] <= 'z') { 
+			if (str_for_encrypt[i] + key > 'z') // Если происходит выход за пределы алфавита
+				str_for_encrypt[i] = 'z' - str_for_encrypt[i] + 'a' + key - 1; // Переносимся в начало и применяем ключ
+			else str_for_encrypt[i] += key; 
 		}
-		else if ('A' <= str_for_encrypt[i] && str_for_encrypt[i] <= 'Z') { // Работа с верхним регистром
-			if (str_for_encrypt[i] + key > 'Z') // Аналогично нижнему
+		else if ('A' <= str_for_encrypt[i] && str_for_encrypt[i] <= 'Z') { // Тот же принцип, но для верхнего регистра
+			if (str_for_encrypt[i] + key > 'Z') 
 				str_for_encrypt[i] = 'Z' - str_for_encrypt[i] + 'A' + key - 1;
 			else str_for_encrypt[i] += key;
 		}
-		else if (str_for_encrypt[i] == ' '); // Пропуск пробела
+		else if (str_for_encrypt[i] == ' '); 
 	}
-	return; // Ничего не возвращает. Вывод результата шифра производится путем обращения к text
+	return; 
 }
 
 void marks(char* string)
