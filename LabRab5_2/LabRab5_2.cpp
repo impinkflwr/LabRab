@@ -4,9 +4,9 @@
 int main()
 {
 	Matrix matr;
-	matr.input(3, 3);
+	matr.input(2, 2);
 	matr.print();
 	Matrix matr2;
-	matr2.input(3, 3);
+	matr2.input(2, 2);
 	matr2.print();
 }
