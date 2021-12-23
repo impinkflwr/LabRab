@@ -23,6 +23,7 @@ public:
 	void input(int i, int j);
 	void print();
 	int matradd(double* elem, double* elem2, int _col, int _row);
+	void mult_by_num(double num);
 	int get_columns();
 	int get_rows();
 	int get_size();

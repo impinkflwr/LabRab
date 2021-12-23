@@ -42,7 +42,7 @@ Matrix::~Matrix()
 
 void Matrix::input()
 {
-	std::cout << "Input size of matrix: ";
+	std::cout << "Size of matrix: ";
 	std::cin >> col >> row;
 	elem = new double[(col) * (row)];
 	std::cout << "Input elements:" << std::endl;
@@ -93,7 +93,15 @@ int Matrix::matradd(double* elem1, double* elem2, int col1, int row2)
 	{
 		elem[i] = elem1[i] + elem2[i];
 	}
-	return 1;
+	return 0;
+}
+
+void Matrix::mult_by_num(double num)
+{
+	for (int i = 0; i < row * col; i++)
+	{
+		elem[i] = elem[i] * num;
+	}
 }
 
 double Matrix::trace(double* elem, int size)

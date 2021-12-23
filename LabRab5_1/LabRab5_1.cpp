@@ -15,7 +15,7 @@ int main()
 	matr3.print();
 
 	Matrix matr4;
-	matr4.input(3, 3);
+	matr4.input();
+	matr4.mult_by_num(3);
 	matr4.print();
-	std::cout << matr4.get_elem(1, 2);
 }
