@@ -71,6 +71,29 @@ void Matrix::print()
 	std::cout << std::endl;
 }
 
+int Matrix::matradd(double* elem1, double* elem2, int col1, int row2)
+{
+	if (col1 != row2) {
+		std::cout << "The size of matrix must be the same.";
+	}
+	elem = new double[col1 * row2];
+	col = col1;
+	row = row2;
+	for (int i = 0; i < row2 * col1; i++)
+	{
+		elem[i] = elem1[i] + elem2[i];
+	}
+	return 1;
+}
+
+void Matrix::matradd(double* elem1)
+{
+	for (int i = 0; i < get_size(); i++)
+	{
+		elem[i] = elem[i] + elem1[i];
+	}
+}
+
 int Matrix::get_columns()
 {
 	return col;

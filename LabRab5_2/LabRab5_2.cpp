@@ -9,4 +9,5 @@ int main()
 	Matrix matr2;
 	matr2.input(2, 2);
 	matr2.print();
+	Matrix matr3;
 }

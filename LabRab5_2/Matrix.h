@@ -19,6 +19,8 @@ public:
 	void input(int i, int j);
 	void input(int i, int j, double* arr);
 	void print();
+	int matradd(double* elem1, double* elem2, int col1, int row2);
+	void matradd(double* elem1);
 	int get_columns();
 	int get_rows();
 	int get_size();
