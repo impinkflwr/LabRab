@@ -9,21 +9,47 @@ private:
 	int row, col;
 
 public:
-	double* elem;
+	double* elem = new double;
 
 	Matrix();
-	Matrix(int i, int j);
-	Matrix(int i, int j, const double* arr);
+
+
+	// Перегрузка конструктора
+	void matrix(int i, int j);
+	void matrix(int i, int j, double* arr);
+
+
 	~Matrix();
 
+
+	// Стандартный ввод
+	void input();
+
+
+	// Перегрузка ввода
 	void input(int i, int j);
 	void input(int i, int j, double* arr);
+
+
+	// Вывод
 	void print();
+
+
+	// Сложение матриц
 	int matradd(double* elem1, double* elem2, int col1, int row2);
-	void matradd(double* elem1);
+	void matradd(const double* arr);
+	int matradd(double* arr, int size);
+
+	// Умножение матрицы на число
+	void mult_by_num(double num);
+
+
 	int get_columns();
 	int get_rows();
 	int get_size();
+
+
+	// След матрицы
 	double trace(double* elem, int size);
 };
 
