@@ -16,11 +16,8 @@ bool Palindrom()
 		if (text[i] == ' ')
 		{
 			i++;
-		} 
-		else
-		{
 			dek.push_back(text[i]);
-		}
+		} 
 	}
 	while (dek.size() > 1)
 	{
