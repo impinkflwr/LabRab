@@ -1,39 +1,41 @@
 ﻿#include <iostream>
 #include <deque>
-#include <string>
+#include <cstring>
 
 using namespace std;
 
-bool Palindrom()
+bool Palindrom(char* text)
 {
 	deque <char> dek;
-	string text;
-	cout << "Input string: ";
-	cin >> text;
 
-	for (int i = 0; i < text.size(); i++)
+	for (int i = 0; i < strlen(text); i++)
 	{
 		if (text[i] == ' ')
 		{
 			i++;
-			dek.push_back(text[i]);
-		} 
-	}
-	while (dek.size() > 1)
-	{
-		if (dek.front() == dek.back())
-		{
-			dek.pop_back();
-			dek.pop_front();
 		}
-		else
+		dek.push_back(text[i]);
+	}
+
+	while (dek.size() >= 2)
+	{
+		if (tolower(dek.front()) != tolower(dek.back()))
 		{
-			cout << "It's not palindrome." << endl;
+			cout << "It's not paliindrome." << endl;
 			cout << endl;
 			return false;
 		}
-		cout << endl;
+		else
+		{
+			(dek.pop_front());
+			(dek.pop_back());
+		}
+
 	}
+
+	cout << "It's palindrome." << endl;
+	cout << endl;
+	return true;
 }
 
 int main()
@@ -49,7 +51,10 @@ int main()
 		{
 		case 1:
 		{
-			Palindrom();
+			char text[255];
+			cin.ignore();
+			cout << "Input string: "; cin.getline(text, 255);
+			Palindrom(text);
 			break;
 		}
 		default:
