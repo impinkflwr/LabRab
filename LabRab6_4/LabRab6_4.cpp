@@ -6,18 +6,27 @@ using namespace std;
 
 int main() 
 {
-	set <string> test;		//Создаём множество
+	//Создаём множество
+	set <string> test;		
 	string input;
 	while (true)
 	{
-		cout << "Input your answers: "; cin >> input;	//Запрашиваем у пользователя ввод
-		if (test.find(input) == test.end())				//Проверяем, есть ли уже такой элемент во множестве
+		//Запрашиваем у пользователя ввод
+		cout << "Input your answers: "; cin >> input;	
+
+		//Проверяем, есть ли уже такой элемент во множестве
+		if (test.find(input) == test.end())				
 		{
-			cout << "Your answers have been sent successfully!" << endl; //Если нет, то выводим успешную отпрвку
-			cout << endl;												 //И вносим элемент во множество
+			//Если нет, то выводим успешную отправку
+			cout << "Your answers have been sent successfully!" << endl; 
+			cout << endl;
+
+			//И вносим элемент во множество
 			test.insert(input);
-		}																
-		else                                                             //Иначе выводим ошибку
+		}
+
+		//Иначе выводим ошибку
+		else
 		{
 			cout << "Something went wrong..." << endl; "\n";
 			cout << endl;
